@@ -1,0 +1,13 @@
+L+  /etc/nginx/         - - - -            /opt/openresty/nginx/conf
+L+  /etc/nginx/logs/    - - - -            /opt/openresty/nginx/logs
+L+  /var/log/nginx/     - - - -            /opt/openresty/nginx/logs
+d   /var/cache/nginx              1700 http http 10d -
+d   /var/cache/nginx/pagespeed    1700 http http 10d -
+d   /var/cache/nginx/client-body  1700 http http 10d -
+d   /var/cache/nginx/fcgi         1700 http http 10d -
+d   /var/cache/nginx/proxy        1700 http http 10d -
+d   /var/cache/nginx/scgi         1700 http http 10d -
+d   /var/cache/nginx/uwsgi        1700 http http 10d -
+d   /var/cache/passenger          1777 http http 10d -
+d   /var/cache/nginx/fastcgi      1700 http http 10d -
+

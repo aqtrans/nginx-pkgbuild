@@ -1,0 +1,30 @@
+post_install() {
+
+if [ ! -e /etc/nginx ]; then
+  ln -sv "/opt/openresty/nginx/conf" "/etc/nginx"
+  ln -sv "/opt/openresty/nginx/logs" "/etc/nginx/logs"
+fi
+if [ ! -e /usr/bin/nginx ]; then
+  ln -sv "/opt/openresty/nginx/sbin/nginx" "/usr/bin/nginx"
+fi
+if [ ! -e /var/log/nginx ]; then
+  ln -sv "/opt/openresty/nginx/logs" "/var/log/nginx"
+fi
+
+}
+post_upgrade() {
+
+if [ ! -e /etc/nginx ]; then
+  ln -sv "/opt/openresty/nginx" "/etc/nginx"
+  ln -sv "/opt/openresty/nginx/logs" "/etc/nginx/log"
+fi
+if [ ! -e /usr/bin/nginx ]; then
+  ln -sv "/opt/openresty/nginx/sbin/nginx" "/usr/bin/nginx"
+fi
+if [ ! -e /var/log/nginx ]; then
+  ln -sv "/opt/openresty/nginx/logs" "/var/log/nginx"
+fi
+
+
+}
+
