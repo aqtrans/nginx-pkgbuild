@@ -1,4 +1,5 @@
 post_install() {
+echo "Because I use OpenResty as the base for this, Nginx is installed to /opt/openresty and symlinks are created to the usual Nginx locations."
 
 if [ ! -e /etc/nginx ]; then
   ln -sv "/opt/openresty/nginx/conf" "/etc/nginx"
@@ -15,8 +16,8 @@ fi
 post_upgrade() {
 
 if [ ! -e /etc/nginx ]; then
-  ln -sv "/opt/openresty/nginx" "/etc/nginx"
-  ln -sv "/opt/openresty/nginx/logs" "/etc/nginx/log"
+  ln -sv "/opt/openresty/nginx/conf" "/etc/nginx"
+  ln -sv "/opt/openresty/nginx/logs" "/etc/nginx/logs"
 fi
 if [ ! -e /usr/bin/nginx ]; then
   ln -sv "/opt/openresty/nginx/sbin/nginx" "/usr/bin/nginx"
